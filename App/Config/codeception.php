@@ -11,9 +11,9 @@
     |
     */
 
-$localConfig = array();
-if (file_exists(__DIR__.'/codeception-local.php')) {
-    $localConfig = require(__DIR__.'/codeception-local.php');
+$projectConfig = array();
+if (file_exists(__DIR__.'/../../../../../webception-config.php')) {
+    $projectConfig = require(__DIR__.'/../../../../../webception-config.php');
 }
 
 return array_merge_recursive(array(
@@ -63,7 +63,8 @@ return array_merge_recursive(array(
         dirname(__FILE__) .
         DIRECTORY_SEPARATOR.'..'.
         DIRECTORY_SEPARATOR.'..'.
-        DIRECTORY_SEPARATOR.'vendor'.
+        DIRECTORY_SEPARATOR.'..'.
+        DIRECTORY_SEPARATOR.'..'.
         DIRECTORY_SEPARATOR.'codeception'.
         DIRECTORY_SEPARATOR.'codeception'.
         DIRECTORY_SEPARATOR.'codecept',
@@ -122,4 +123,4 @@ return array_merge_recursive(array(
     */
     'debug'        => FALSE,
     'steps'        => TRUE,
-), $localConfig);
+), $projectConfig);

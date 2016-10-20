@@ -54,7 +54,7 @@ Also note Webception's `codeception.yml` is setup to use `http://webception:80` 
 
 You can either install Webception using Composer:
 
-`composer create-project jayhealey/webception --stability=dev`
+`composer require chrum/webception:"dev-master"
 
 Or [downloaded Webception](https://github.com/jayhealey/Webception/archive/master.zip) and unzip it.  Once you've unzipped it, you need to install the Composer dependancies with:
 
@@ -68,11 +68,11 @@ Now you can do the following:
 
 2. Set permissions so Codeception can write out the log files:
 
-   `sudo chmod -R 777 App/Tests/_log`
+   `sudo chmod -R 777 vendor/chrum/webception/App/Tests/_log`
 
 3. Set permissions so Slim PHP can write to the template cache:
 
-   `sudo chmod -R 777 App/Templates/_cache`
+   `sudo chmod -R 777 vendor/chrum/webception/App/Templates/_cache`
 
 4. Point your new server to the `public` path of where you unzipped Webception.
 
@@ -82,7 +82,10 @@ If there are any issues Webception will do it's best to tell what you need to do
 
 ### 2. Customise the Webception configuration
 
-There are a few configuration files you can play with in  `/App/Config/codeception.php`.
+Create configuration file in the root dir of your project (next to vendor):
+   `touch webception-config.php`
+Its content will override config located at:
+    `/App/Config/codeception.php`
 
 #### Adding your own tests to Webception
 
