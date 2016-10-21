@@ -10,7 +10,12 @@
  */
 
 // Load Silex's Autoloader, so Codeception tests can load Webceptions library.
-require dirname(__FILE__)  . '/../../vendor/autoload.php';
+if (file_exists(dirname(__FILE__)  . '/../../../../vendor/autoload.php')) {
+    require dirname(__FILE__)  . '/../../../../vendor/autoload.php';
+
+} else if (file_exists(dirname(__FILE__)  . '/../../vendor/autoload.php')) {
+    require dirname(__FILE__)  . '/../../vendor/autoload.php';
+}
 
 // Load Webceptions custom bootstrap for helper functions.
 require dirname(__FILE__)  . '/../bootstrap.php';

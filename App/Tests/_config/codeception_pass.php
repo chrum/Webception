@@ -12,6 +12,13 @@
 |
 */
 
+if (file_exists(dirname(__FILE__) .'/../../../../../bin/codecept')) {
+    $executable = dirname(__FILE__) .'/../../../../../bin/codecept';
+
+} else {
+    $executable = dirname(__FILE__) .'/../../../vendor/bin/codecept';
+}
+
 return array(
 
     /*
@@ -33,7 +40,7 @@ return array(
     |--------------------------------------------------------------------------
     */
 
-    'executable' => dirname(__FILE__) .'/../../../vendor/bin/codecept',
+    'executable' => $executable,
 
     /*
     |--------------------------------------------------------------------------
